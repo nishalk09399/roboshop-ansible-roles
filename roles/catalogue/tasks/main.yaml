@@ -16,8 +16,8 @@
 
 - name: install and download the dependencies
   ansible.builtin.command: npm install 
-    args:
-      chdir: /app
+  args:
+    chdir: /app
 
 # - name: copy, demon reload, and restart
 #   ansible.builtin.import_role:
