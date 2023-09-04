@@ -9,4 +9,4 @@
       state: installed
 
   - name: load {{component}} data
-    ansible.builtin.command: mongo --host mongodb.nishaldevops.online < /app/schema/{{component}}.js
+    ansible.builtin.shell: mongo --host mongodb.nishaldevops.online < /app/schema/{{component}}.js
