@@ -1,7 +1,7 @@
 - name: install python
   ansible.builtin.import_role:
     name: common
-    tasks_from: pythonmodulesinstall
+    tasks_from: python
 
 
 - name: setup app
