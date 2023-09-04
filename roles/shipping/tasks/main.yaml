@@ -12,7 +12,7 @@
 - name: cleaning and target file
   ansible.builtin.import_role:
     name: common
-    tasks_from: mavenpackages
+    tasks_from: cleanmaven
 
 - name: load schema
   ansible.builtin.import_role:
