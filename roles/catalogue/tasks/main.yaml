@@ -14,3 +14,18 @@
     name: common
     tasks_from: app-setup
 
+- name: install and download the dependencies
+  ansible.builtin.command: npm install 
+    args:
+      chdir: /app
+
+# - name: copy, demon reload, and restart
+#   ansible.builtin.import_role:
+#     name: common
+#     tasks_from: ssystemd.setup.yaml
+
+- name: load schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: load-schema
+
