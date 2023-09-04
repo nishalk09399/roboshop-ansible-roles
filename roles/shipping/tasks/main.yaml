@@ -1,0 +1,28 @@
+- name: Install maven
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mavenpackages
+
+
+- name: SetUp Application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup  
+
+- name: cleaning and target file
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mavenpackages
+
+- name: load schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: load-schema
+
+- name: setup application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd-setup
+
+
+
