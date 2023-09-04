@@ -3,28 +3,28 @@
 #common is also another role
 #i need to import a task nodejs.yaml in catalogue
 
-- name: install nodejs
+
+- name: Install NodeJS
   ansible.builtin.import_role:
     name: common
     tasks_from: nodejs
 
-
-- name: setup app
+- name: SetUp Application
   ansible.builtin.import_role:
     name: common
     tasks_from: app-setup
 
-- name: install and download the dependencies
-  ansible.builtin.command: npm install 
+- name: install dependencies
+  ansible.builtin.command: npm install
   args:
     chdir: /app
 
-- name: load schema
+- name: Load Schema
   ansible.builtin.import_role:
     name: common
     tasks_from: load-schema
 
-- name: start application
+- name: Start application
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup
