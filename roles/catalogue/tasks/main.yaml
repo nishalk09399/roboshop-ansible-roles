@@ -19,14 +19,12 @@
   args:
     chdir: /app
 
-
-
 - name: load schema
   ansible.builtin.import_role:
     name: common
     tasks_from: load-schema
 
-- name: setup application
+- name: start application
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup
