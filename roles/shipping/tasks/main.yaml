@@ -17,7 +17,7 @@
 - name: load schema
   ansible.builtin.import_role:
     name: common
-    tasks_from: load-schema
+    tasks_from: load-sql-schema
 
 - name: setup application
   ansible.builtin.import_role:
