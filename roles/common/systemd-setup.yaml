@@ -6,11 +6,11 @@
   - name: demon reload
     ansible.builtin.systemd:
       daemon_reload: true
-      state: restarted
-      name: "{{component}}"
+      
 
   - name: restart {{component}}
     ansible.builtin.service:
       name: "{{component}}"
+      enabled: yes
       state: restarted
 
