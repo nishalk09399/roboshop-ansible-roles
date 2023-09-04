@@ -9,10 +9,15 @@
     name: common
     tasks_from: app-setup  
 
-- name: cleaning and target file
-  ansible.builtin.import_role:
-    name: common
-    tasks_from: cleanmaven
+- name: install dependencies
+  ansible.builtin.command: mvn clean package
+  args:
+    chdir: /app
+
+- name: rename jar file
+  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /app
 
 - name: load schema
   ansible.builtin.import_role:
