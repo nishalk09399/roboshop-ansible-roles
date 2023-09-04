@@ -20,7 +20,7 @@
     name: common
     tasks_from: load-schema
 
-- name: copy, demon reload, and restart
+- name: setup application
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup
